@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>fIRST</title>
+<style>
+    .play-music-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4rem;
+      height: 4rem;
+      background: #f9bbf9;
+      border-radius: 50%;
+      z-index: 5;
+      transform: translate(-50%, -20%);
+      cursor: pointer;
+    }
+  </style>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="env"></div>
+        <img src="" alt="">
+        <img src="" alt="" class="heart-animation">
+        <div class="lettre">
+          <div>
+            HAPPY 
+            VALENTINE'S 
+            DAY
+            <br>
+            MY BABI 
+          </div>
+        </div>
+        <div class="front"></div>
+      </div>
+      <audio id="music" src="music1.mp3" preload="auto" autoplay></audio>
+      <button id="play-music-btn" class="play-music-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/20000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="black"/>
+          <path d="M12 16L18 10L12 4L6 10L12 16Z" fill="black"/>
+        </svg>
+      </button>
+
+      <div class="next-button">
+        <a href="https://blopyey1.github.io/valentine2.github.io/" target="_blank">Next</a>
+      </div>
+      
+      
+      <script>
+        const music = document.getElementById("music");
+        const playMusicButton = document.getElementById("play-music-btn");
+      
+        playMusicButton.addEventListener("click", () => {
+          if (music.paused) {
+            music.play();
+            playMusicButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="black"/><path d="M12 16L18 10L12 4L6 10L12 16Z" fill="black"/></svg>`;
+          } else {
+            music.pause();
+            playMusicButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 11H8V13H16V11Z" fill="black"/><path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 20C7.58871 20 4 16.4112 4 12C4 7.58871 7.58871 4 12 4C16.4112 4 20 7.58871 20 12C20 16.4112 16.4112 20 12 20Z" fill="black"/></svg>`;
+          }
+        });
+
+        const nextButton = document.querySelector('.next-button');
+
+nextButton.addEventListener('click', () => {
+  window.open('https://blopyey1.github.io/valentine2.github.io/', '_blank');
+});
+      </script>
+</body>
+</html>
